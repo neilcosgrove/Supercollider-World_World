@@ -188,8 +188,8 @@
 		sceneState[\backgroundMode] = \followCamera;
 		sceneState[\hud           ] = \alienMaze_HUD;         // name of hud method below
 		sceneState[\overlay       ] = true;                   // light map
-		sceneState[\overlayStart  ] = 248+20;
-		sceneState[\overlayFade   ] = 150+20;
+		sceneState[\overlayStart  ] = (248+20);
+		sceneState[\overlayFade   ] = (150+20);
 		sceneState[\overlayLight  ] = Color.clear;
 		sceneState[\overlayDark   ] = Color.black;
 		sceneState[\overlayOrigin ] = { World_World.cameraPos };
@@ -238,8 +238,8 @@
 		};
 		// light moves like a flame & change volume of thruster
 		sceneScripts[\tick] = {
-			sceneState[\overlayStart] = (worldTime*6     ).heatMap.map(0,1,243,253)/(zoom ** 1.1) * 1.5 * worldState[\lightZoom];
-			sceneState[\overlayFade ] = (worldTime*6+1000).heatMap.map(0,1,145,155)/(zoom ** 1.1) * 1.6 * worldState[\lightZoom];
+			sceneState[\overlayStart] = (worldTime*6     ).heatMap.map(0,1,243,253)/(zoom ** 1.1) * 1.5 * worldState[\lightZoom] * globalZoom;
+			sceneState[\overlayFade ] = (worldTime*6+1000).heatMap.map(0,1,145,155)/(zoom ** 1.1) * 1.6 * worldState[\lightZoom] * globalZoom;
 			if ( players[0].notNil) {
 				World_Audio.amp(\thruster, players[0].isAlive.if {players[0][\mechanics].velocity.rho * 0.0125 } {0} );
 			};
@@ -314,16 +314,18 @@
 	*alienMaze_HUD{
 		Pen.use{
 			var string = (sceneState[\stars] ? 0).asString+"/"+(sceneState[\totalStars]?0);
-			var len    = string.bounds(hudFont).width;
-			Pen.scale(globalZoom,globalZoom);
-			Pen.prDrawImage(Point( (screenWidth - 65 - len) / globalZoom,  12 / globalZoom), images[\star], nil, 0, 1.0);
-			Pen.stringLeftJustIn(string,
-				tempRect.replaceLTWB( (screenWidth - 20 - len) / globalZoom, 0 / globalZoom, len / globalZoom, 60 / globalZoom),
-				hudFont, white
-			);
-			Pen.scale(0.45,0.45);
-			worldState[\lives].do{|i|
-				Pen.prDrawImage(Point( (42 + (100*i) ) / globalZoom,  (12 * 3) / globalZoom), images[\ship2], nil, 0, 1.0);
+			var len    = string.bounds(hudFont).width * globalZoom;
+			Pen.use{
+				Pen.scale(globalZoom,globalZoom);
+				Pen.prDrawImage(Point( (screenWidth - 80 - len) / globalZoom,  21 / globalZoom), images[\star], nil, 0, 1.0);
+				Pen.stringLeftJustIn(string,
+					tempRect.replaceLTWB( (screenWidth - 20 - len) / globalZoom, 10, len / globalZoom, 60 / globalZoom),
+					hudFont, white
+				);
+				Pen.scale(0.45,0.45);
+				worldState[\lives].do{|i|
+					Pen.prDrawImage(Point( (42 + (100*i) ),  (12 * 3) / globalZoom), images[\ship2], nil, 0, 1.0);
+				};
 			};
 		};
 	}

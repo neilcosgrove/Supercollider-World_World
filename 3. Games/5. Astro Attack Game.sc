@@ -241,21 +241,19 @@
 			var string = ("SCORE : "++worldState[\score]).asString;
 			Pen.scale(globalZoom,globalZoom);
 			Pen.stringCenteredIn(string,
-				tempRect.replaceLTWB(0, 0 / globalZoom, screenWidth, 60 / globalZoom),
+				tempRect.replaceLTWB(0, 0 / globalZoom, screenWidth / globalZoom, 60 / globalZoom),
 				hudFont, white
 			);
 			string = ("HIGH SCORE : "++worldState[\highScore]).asString;
-			Pen.scale(globalZoom,globalZoom);
 			Pen.stringRightJustIn(string,
-				tempRect.replaceLTWB(0, 0 / globalZoom, screenWidth, 60 / globalZoom),
+				tempRect.replaceLTWB(0, 0 / globalZoom, screenWidth / globalZoom, 60 / globalZoom),
 				hudFont, white
 			);
 			Pen.use{
 				Pen.scale(0.45,0.45);
 				worldState[\lives].do{|i|
-					Pen.prDrawImage(Point( (42 + (100*i) ) / globalZoom,  (12 * 3) / globalZoom), images[\ship2], nil, 0, 1.0);
+					Pen.prDrawImage(Point( (42 + (100*i) ),  (12 * 3) / globalZoom), images[\ship2], nil, 0, 1.0);
 				};
-
 				if (worldState[\hasShield]==true) {
 					Pen.prDrawImage(Point( worldWidth * 0.5 / 0.45,  worldHeight - 32 / 0.45), images[\shieldUp], nil, 0, 1.0);
 				};
