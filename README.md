@@ -58,15 +58,7 @@ You can then start the engine with
 World_World.start;
 
 ATM the Keys on a UK Mac are...
-WASD = movement
-
-space = jump
-
-return = fire
-
-; = wall grab
-
-escape = pause
+WASD = movement, space = jump, return = fire, ; = wall grab, escape = pause
 
 This demo was made with Geomancy as the intended font. You don't have to have this font installed for it to work but it does look better if you do. Geomancy can be found in the assets/fonts folder or here... https://www.dafont.com/geomancy.font
 Please see its Readme.txt file for usage.
