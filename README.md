@@ -63,4 +63,4 @@ WASD = movement, space = jump, return = fire, ; = wall grab, escape = pause
 This demo was made with Geomancy as the intended font. You don't have to have this font installed for it to work but it does look better if you do. Geomancy can be found in the assets/fonts folder or here... https://www.dafont.com/geomancy.font
 Please see its Readme.txt file for usage.
 
-I've not written any help files yet. The glossary or the Games folder are good places to start. Or you could use the debug mode to inspect Entities and see what Components they're made of + their internal state. Game loops give you a good idea of the order thing happen in.
+I've not written any help files yet. The glossary or the Games folder are good places to start. Or you could use the debug mode to inspect Entities and see what Components they're made of + their internal state. Game loops give you a good idea of the order things happen in.
