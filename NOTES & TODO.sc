@@ -6,6 +6,11 @@
 Vector ship designed and coded by mjsyts - https://github.com/mjsyts/spacegame/blob/main/spacegame
 The Royalty-Free alien sprites come from https://www.pinterest.co.uk/pin/296533956721131545/
 
+If you don't want the engine to start on launch goto 1.World/1.World.sc and change this line to...
+classvar <startEngine = false;   // start the game engine on launch
+You can then start the engine with
+World_World.start;
+
 ATM the Keys on a UK Mac are...
 WASD = movement
 space = jump

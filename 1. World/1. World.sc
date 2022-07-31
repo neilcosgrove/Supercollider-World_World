@@ -16,12 +16,12 @@ World_World {
 
 	// Start up flags (all these are overridden if releaseMode is true)
 
-	classvar <>verbose    = false;   // post dev & debug info
-	classvar <startEngine = true;   // start the game engine on launch
-	classvar <fullScreen  = true;    // open in fullscreen mode
-	classvar <titleScreen = true;    // open the title screen on launch
-	classvar <skipIntro   = false;   // use to skip intro during dev
-	classvar <>debugMode  = false;   // open the debug scene on launch & call World_World.debug in the game loop
+	classvar <>verbose    = false;  // post dev & debug info
+	classvar <startEngine = false;   // start the game engine on launch
+	classvar <fullScreen  = true;   // open in fullscreen mode
+	classvar <titleScreen = true;   // open the title screen on launch
+	classvar <skipIntro   = false;  // use to skip intro during dev
+	classvar <>debugMode  = false;  // open the debug scene on launch & call World_World.debug in the game loop
 
 	classvar titleScreenBuildMethod = \buildTitleScreenScene; // this scene will open on launch if titleScreen = true;
 	classvar defaultBuildMethod     = \buildSpaceJumperScene; // this scene will open on launch if titleScreen = false;

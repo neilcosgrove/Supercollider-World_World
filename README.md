@@ -49,7 +49,17 @@ It's many features include...
 
 • Scripting and Timers that run on the World or a Scene clock
 
-Drop the "Supercollider-World_World" folder and its entire contents into the "SCClassLibary" folder to get it working.
+Drop the "Supercollider-World_World" folder and its entire contents into the "SCClassLibary" folder to get it working. If you don't want the engine to start on launch open file 1.World/1.World.sc and change this line to...
+classvar <startEngine = false;
+You can then start the engine with
+World_World.start;
+
+ATM the Keys on a UK Mac are...
+WASD = movement
+space = jump
+return = fire
+; = wall grab
+escape = pause
 
 This demo was made with Geomancy as the intended font. You don't have to have this font installed for it to work but it does look better if you do. Geomancy can be found in the assets/fonts folder or here... https://www.dafont.com/geomancy.font
 Please see its Readme.txt file for usage.
