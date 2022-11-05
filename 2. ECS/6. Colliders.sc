@@ -68,35 +68,7 @@ World_Line_Collider : World_Line_Collider_Base {
 
 }
 
-World_Rect_Collider : World_Rect_Collider_Base {
 
-	var <>restitution;
-
-	*new{|parent, restitution = 1, solid = false|
-		^super.new.initComponent(parent).initUGP.init(restitution, solid) // initShape not needed here, shape is a rect
-	}
-
-	init{|argRestitution, solid|
-		isSolid = solid;
-		if (isSolid) {
-			// £
-			this.collisionSource_(\tiles, true);
-		}{
-			this.collisionSource_(\npcs, true);
-			this.collisionResponder_(\tiles, true);
-		};
-		restitution = argRestitution;
-	}
-
-	onCollision{|collider|
-		// World Tile response
-		if (collider.isTile ) {
-			if (collider.isRect    ) { this.    rectResponse_rigidBodyBounce(collider,restitution); ^this };
-			if (collider.isTriangle) { this.triangleResponse_rigidBodyBounce(collider,restitution); ^this };
-		};
-	}
-
-}
 
 World_Triangle_Collider : World_Triangle_Collider_Base {
 

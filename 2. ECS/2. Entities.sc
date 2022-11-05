@@ -211,8 +211,6 @@ World_Vector_Top_Down_Player : World_Entity {
 		components[\drawFunc   ] = World_TDPVector_DrawFunc(this, layer, Color.red, Color.white);
 	}
 
-	isAlive { if(components.notNil) { ^components[\health].isAlive } { ^false } }
-
 }
 
 // Top Down Player Draw Func //

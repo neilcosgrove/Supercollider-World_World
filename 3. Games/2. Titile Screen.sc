@@ -58,11 +58,11 @@
 		};
 		// key down press
 		sceneScripts[\keyDown] = {|key|
-			if ((key.key>=49)&&(key.key<=53)) {
+			if ((key.key>=49)&&(key.key<=54)) {
 				World_Camera.setToBlack;
 				{
 					World_World.startGame([\buildSpaceJumperScene,\buildAlienMazeScene,\buildAstroAttackScene,
-						\buildSimScene,\buildDebugScene][key.key-49] );
+						\buildSimScene,\buildDebugScene, \buildRaycasterScene][key.key-49] );
 				}.deferInWorld;
 			};
 			if (key.isQuitSCLang) { World_World.quitSCLang };

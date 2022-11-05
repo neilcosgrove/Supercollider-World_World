@@ -390,6 +390,9 @@ Vector : Point {} // a vector is a point. Vector is used just for clarity. there
 
 + Color {
 	scale{|r=1,g=1,b=1| red = red * r; green = green * g; blue = blue * b}
+
+	replaceMul{|color,scale| red = color.red * scale; green = color.green * scale; blue = color.blue * scale}
+
 	replace{|r,g,b| red=r; green=g; blue=b}
 	replaceRGBA{|r,g,b,a| red=r; green=g; blue=b; alpha=a}
 	replaceClip{|r,g,b| red=r.clip(0,1); green=g.clip(0,1); blue=b.clip(0,1)}

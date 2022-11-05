@@ -9,6 +9,7 @@ World_Super_Collider : World_Component {
 	var <collisionSource = false, <collisionResponder = false, <collisionSourceTypes, <collisionResponderTypes;
 	var <origin, <boundingBox, <cell, <previousCell, <>isSolid = false, <previousBoundingBox;
 
+	isPoint    { ^false }
 	isCircle   { ^false }
 	isRect     { ^false }
 	isLine     { ^false }
@@ -603,6 +604,20 @@ World_Rect_Collider_Base : World_Super_Collider {
 	// collision detection for Rectangles
 	testForCollision{|collider|
 		if (collider===this) {^false}; // stop self detection
+
+		if (collider.isPoint) {
+			var x = collider.x;
+			var y = collider.y;
+
+			//[x,y,boundingBox].postln;
+
+			if (x < boundingBox.left  ) { ^false };
+			if (x > boundingBox.right ) { ^false };
+			if (y < boundingBox.top   ) { ^false };
+			if (y > boundingBox.bottom) { ^false };
+			^true;
+		};
+
 		// rectangle vs circle
 		if (collider.isCircle) {
 			var cx = collider.origin.x;
@@ -681,13 +696,35 @@ World_Triangle_Collider_Base : World_Super_Collider {
 
 + Rect {
 	// so i can pass a Rect() into .testForCollision method
-	isCircle   {^false }
-	isRect     {^true  }
-	isLine     {^false }
-	boundingBox{^this  }
+	isPoint    { ^false }
+	isCircle   { ^false }
+	isRect     { ^true  }
+	isLine     { ^false }
+	isTriangle { ^false }
+	boundingBox{ ^this  }
+
+	isPlayer   { ^false }
+	isTile     { ^false }
+	isNPC      { ^false }
+	isItem     { ^false }
+	isBullet   { ^false }
 }
 
 + Point {
+
+	// so i can pass a Point() into .testForCollision method
+	isPoint    { ^true  }
+	isCircle   { ^false }
+	isRect     { ^false }
+	isLine     { ^false }
+	isTriangle { ^false }
+	boundingBox{ ^Rect.aboutPoint(this,1,1) }
+
+	isPlayer   { ^false }
+	isTile     { ^false }
+	isNPC      { ^false }
+	isItem     { ^false }
+	isBullet   { ^false }
 
 	clipToLineSeg{|p1,p2|
 		var x1 = p1.x;

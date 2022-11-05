@@ -8,7 +8,7 @@ then you should be able to save them.
 a = "test".loadState;
 a.collect(_.class);
 a[5][1].class
-(a: Color.black, b:Point(1,2), c:[1,2,3]).saveState("test"); // Events or IdentityDictionary are good ways to sort stuff
+(a: Color.black, b:Point(1,2), c:[1,2,3]).saveState("test"); // Events or IdentityDictionary are good ways to store stuff
 "test".loadState[\b]
 */
 

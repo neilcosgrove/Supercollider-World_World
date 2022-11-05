@@ -8,7 +8,9 @@
 
 World_UGP : World_World {
 
-	classvar <>collisionTypes = #[\tiles, \solids, \npcs, \items, \npcBullets]; // name of collisions groups, u can + more
+	// names of collisions groups, you can add more
+	classvar <>collisionTypes = #[\tiles, \solids, \npcs, \items, \npcBullets, \rayCast];
+
 	var <cellWidth, <cellHeight, <gridWidth, <gridHeight, <cells, <responders, <maxResponderSize;
 
 	// maxResponderSize is the largest size a responder can be in num cells
