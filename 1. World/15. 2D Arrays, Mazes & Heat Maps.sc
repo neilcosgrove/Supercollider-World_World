@@ -132,7 +132,7 @@ Array2D.mazeRBT(20,20);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                          Heat Maps                                                 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-// heat maps use hash to create random values that can be interp
+// heat maps use float hash values to create random values that can be interp
 // for example
 /*
 (0,   0.1 .. 10).collect(_.heatMap).plot;

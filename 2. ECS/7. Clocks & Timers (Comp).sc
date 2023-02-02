@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-//                         Clocks & Timer for use in Components                                       //
+//                         Clocks & Timers for use in Components                                      //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // NEVER defer, fork, sched, Routine or Task anything.
 // There is no guarantee the scene or world will be the same or even running when your function yields.

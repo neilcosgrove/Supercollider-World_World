@@ -36,48 +36,48 @@ test subtitles and backgrounds with different screen resolutions
 falling balls as a sim, or add gravity to current sim, i could do a flocking algo easily
 Standardise initial tile pos
 
-// Fix circle vs triangle hypot corners
+Fix circle vs triangle hypot corners
 
-// NPC after rand time change direction
-// NPC add a hunter timer
-// NPC ray-marching so i can do line of site
+NPC after rand time change direction
+NPC add a hunter timer
+NPC ray-marching so i can do line of site
 
-// make a fork timer component
+make a fork timer component
 
-// add instance number or map number or something to scene state to identify and locate the scene
-// levels could be stored in a MultiLevelIdentityDictionary?
+add instance number or map number or something to scene state to identify and locate the scene
+levels could be stored in a MultiLevelIdentityDictionary?
 
-// make string draw components
-// Map / ECS editor
-// save & load maps as text files
+make string draw components
+Map / ECS editor
+save & load maps as text files
 
-// change volumes of channels \music, \fx, \dialog, \ambience
-// Play SynthDefs like buffers in Audio player
-// reverse on audio
-// what am i going to do about playlists and swapping scenes with different assets?
+change volumes of channels \music, \fx, \dialog, \ambience
+Play SynthDefs like buffers in Audio player
+reverse on audio
+what am i going to do about playlists and swapping scenes with different assets?
 
-// add more controllers : Xbox next
+add more controllers : Xbox next
 
-// make camera an instance?
-// make ECS an instance?
-// Temporary Items ! ? £
+make camera an instance?
+make ECS an instance?
+Temporary Items ! ? £
 
-// expose Component interface for a gui editor, have methodName + spec [ \radius, Spec(1,2) ]
+expose Component interface for a gui editor, have methodName + spec [ \radius, Spec(1,2) ]
 
-// make a midi In & Out controller
+make a midi In & Out controller
 
-// Partition other container functions
-// Finish supercolliders
+Partition other container functions
+Finish supercolliders
 
-// make alien minecraft, space invaders, asteroids, maze, gauntlet, pong, donkey kong (ladders), pacman, defender, r type
-// arkanoid, bolder dash
+make alien minecraft, space invaders, asteroids, maze, gauntlet, pong, donkey kong (ladders), pacman, defender, r type
+arkanoid, bolder dash
 
-// different layers, different user views, different fps and all that goes with it
-// Area of effect weapons, running - stamina - cooldown, check points, rain, floating dust
-// swinging balls, saw up/down  left/right, portals, moving platforms, flame thrower, cannon, spikes, proximity bombs
-// icy slippery floor, fans
-// random char text like matrix or 8bit guy
-// Shields
+different layers, different user views, different fps and all that goes with it
+Area of effect weapons, running - stamina - cooldown, check points, rain, floating dust
+swinging balls, saw up/down  left/right, portals, moving platforms, flame thrower, cannon, spikes, proximity bombs
+icy slippery floor, fans
+random char text like matrix or 8bit guy
+Shields
 
 Engine Ideas, Game Ideas & things to do
 =======================================
@@ -92,10 +92,10 @@ thoughts on organising physics engine...
 	which surface/side was hit? Each side has a different property? Solid in 1 direction so can jump through the floor
 	Does all this go into the collider?
 	source vs. responder
-	// add/remove this collider as a collision Source of type ( use this when entity is bigger than 1 tile ! ) £
+	add/remove this collider as a collision Source of type ( use this when entity is bigger than 1 tile ! ) £
 	collisionSourceBBox_{|type,bool,addAction = \addToTail|
-	// I should split them methods below into add & remove
-	// add/remove this collider as a collision Source of type
+	I should split them methods below into add & remove
+	add/remove this collider as a collision Source of type
 	collisionSource_{|type, bool = true, addAction = \addToTail|
 
 animated tiles - extended tile blocks?

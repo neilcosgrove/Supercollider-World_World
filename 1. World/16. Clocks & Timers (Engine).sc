@@ -7,8 +7,6 @@
 // These Clocks & Timers are designed for use in scripts.
 // They are bound to the scene or the world and will only tick if the scene or the world ticks.
 
-// defer a func, only happens once
-
 World_Defer_Timer : World_World {
 
 	var <>total     = inf;    // total duration of timer in seconds

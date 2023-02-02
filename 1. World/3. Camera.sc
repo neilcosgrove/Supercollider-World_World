@@ -4,7 +4,8 @@
 /*
 World_Camera.fadeToBlack;
 World_Camera.fadeToClear;
-World_Camera.setToColor(Color.rand.alpha_(0.25)); World_Camera.fadeToClear(2);
+World_Camera.setToColor(Color.rand.alpha_(0.75)); World_Camera.fadeToClear(2);
+World_Camera.shake;
 */
 
 World_Camera : World_World {

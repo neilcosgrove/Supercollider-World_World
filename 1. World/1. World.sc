@@ -12,7 +12,7 @@
 World_World {
 
 	classvar <projectName = "The Supercollider World_World Demo";
-	classvar <releaseMode = false;
+	classvar <releaseMode = true;
 
 	// Start up flags (all these are overridden if releaseMode is true)
 
@@ -29,7 +29,7 @@ World_World {
 	// Globals ///////////////////////////////////////////////////////////
 
 	// scaleMode options are: \none, \diagonal, \width, \height, \nearestPixels, \furthestPixels, \smallestRatio, \largestRatio
-	classvar <scaleMode      = \smallestRatio; // how to scale from the default screen to a different resolutions
+	classvar <scaleMode      = \smallestRatio; // how to scale from the default screen size to different resolutions
 	classvar <game_Loop      = \gameLoop;      // method name of current game loop
 	classvar <render_Loop    = \renderLoop;    // method name of the current render loop
 	classvar <hasStarted     = false;          // has the start up been run yet?
@@ -204,7 +204,7 @@ World_World {
 		};
 	}
 
-	// called during initClass and creating new maps
+	// called during initClass and creating new scenes
 	*initEntityContainers{
 		if (verbose) { "World_World:initEntityContainers".postln };
 		layers          = {OrderedIdentitySet[]} ! numLayers;
@@ -476,7 +476,6 @@ World_World {
 		render_Loop = sceneState[\gameWinLoop];
 		triggerGameOver = true;
 	}
-
 
 	// end a game, called from game pause + q
 	*quitGame{

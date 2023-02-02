@@ -128,7 +128,7 @@ an IdentityDictionary that contains all the scripts (functions) a scene has. The
 
 sceneState:
 an IdentityDictionary that holds data relating to a scene. You can store anything you like in here, the following are predifined.
-[\background    ] = \alienPlanet;   // a symbol to a background image defined in the scen.es assets, or a Color
+[\background    ] = \alienPlanet;   // a symbol to a background image defined in the scenes assets, or a Color
 [\backgroundMode] = \followCamera;  // how the background image is displayed
                                     // options are : \fixedNoZoom, \fixed, \strechToFit, \parallax, \followCamera, \scroll
 [\gameLoop      ] = \gameLoop;      // the default game loop used when the scene opens.
