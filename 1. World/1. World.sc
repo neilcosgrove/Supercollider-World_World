@@ -8,15 +8,18 @@
 // This is the superclass of everything in the engine, all other classes are subclasses of this
 // it holds the current state of the runtime World and shares it with everything else
 // see <link TODO> for a hierarchy graph and a short description of what each class does
+/*
+World_World.start
+*/
 
 World_World {
 
 	classvar <projectName = "The Supercollider World_World Demo";
-	classvar <releaseMode = true;
+	classvar <releaseMode = false;
 
 	// Start up flags (all these are overridden if releaseMode is true)
 
-	classvar <>verbose    = false;  // post dev & debug info
+	classvar <>verbose    = true;  // post dev & debug info
 	classvar <startEngine = false;  // start the game engine on launch
 	classvar <fullScreen  = false;  // open in fullscreen mode
 	classvar <titleScreen = true;   // open the title screen on launch
